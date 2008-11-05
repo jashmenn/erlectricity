@@ -53,14 +53,14 @@ context "When unpacking from a binary stream" do
   
   specify "an erlang reference should decode to a Reference object" do
     ref = get("make_ref()")
-    ref.should.be.instance_of Erlectricity::NewReference
-    ref.node.should.be.instance_of Symbol
+    ref.should be_instance_of(Erlectricity::NewReference)
+    ref.node.should be_instance_of(Symbol)
   end
   
   specify "an erlang pid should decode to a Pid object" do
     pid = get("spawn(fun() -> 3 end)")
-    pid.should.be.instance_of Erlectricity::Pid
-    pid.node.should.be.instance_of Symbol
+    pid.should be_instance_of(Erlectricity::Pid)
+    pid.node.should be_instance_of(Symbol)
   end
   
   
